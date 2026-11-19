@@ -1,0 +1,208 @@
+
+/* Full Profile Page */
+.profile-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 5%;
+    box-sizing: border-box;
+    color: #3F3A4A;
+}
+
+/* Profile Header */
+.profile-header {
+    width: 100%;
+    background: #E8E2F2;
+    padding: 45px;
+    border-radius: 15px;
+    margin-bottom: 35px;
+    box-sizing: border-box;
+}
+
+.profile-header h1 {
+    color: #7567A8;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.profile-header p {
+    margin: 8px 0;
+    color: #5D566D;
+    font-size: 16px;
+}
+
+/* Upload Form */
+.upload-form {
+    width: 100%;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(80, 65, 110, 0.1);
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-sizing: border-box;
+}
+
+.upload-form h2 {
+    color: #7567A8;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.upload-form input,
+.upload-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #D8D0E5;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.upload-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+    outline: none;
+    border-color: #7567A8;
+}
+
+.upload-form button {
+    background: #7567A8;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-start;
+    min-width: 170px;
+}
+
+.upload-form button:hover {
+    background: #5F528E;
+}
+
+.upload-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.profile-message {
+    color: #7567A8;
+    font-weight: 500;
+}
+
+/* Gallery */
+.memories-section {
+    width: 100%;
+}
+
+.memories-section h2 {
+    color: #7567A8;
+    font-size: 27px;
+    margin-bottom: 25px;
+}
+
+.memories-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.memory-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(80, 65, 110, 0.1);
+    transition: transform 0.3s;
+}
+
+.memory-card:hover {
+    transform: translateY(-5px);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.memory-info {
+    padding: 20px;
+}
+
+.memory-info h3 {
+    color: #7567A8;
+    margin-bottom: 10px;
+}
+
+.memory-info p {
+    color: #625B70;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.memory-info small {
+    display: block;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.memory-info button {
+    background: #B85C70;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.memory-info button:hover {
+    background: #984458;
+}
+
+.memories-section > p {
+    color: #777;
+    background: #F5F1FA;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* Medium Screens */
+@media (max-width: 900px) {
+    .memories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Small Screens */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 20px 15px;
+    }
+
+    .profile-header {
+        padding: 25px;
+    }
+
+    .upload-form {
+        padding: 20px;
+    }
+
+    .memories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card img {
+        height: 230px;
+    }
+}

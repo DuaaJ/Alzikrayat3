@@ -1,0 +1,273 @@
+
+.home-container {
+    width: 100%;
+    padding: 30px 5%;
+    background-color: #F5F1FA;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.welcome-section {
+    background-color: #E8E2F2;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 35px;
+}
+
+.welcome-section h1 {
+    color: #7567A8;
+    font-size: 32px;
+}
+
+.welcome-section p {
+    color: #3F3A4A;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.gallery-header h2 {
+    color: #7567A8;
+}
+
+.view-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.view-buttons button {
+    padding: 10px 16px;
+    border: 1px solid #7567A8;
+    border-radius: 6px;
+    background-color: white;
+    color: #7567A8;
+    cursor: pointer;
+}
+
+.view-buttons button:hover,
+.view-buttons button.active {
+    background-color: #7567A8;
+    color: white;
+}
+
+/* Three-column gallery */
+.photo-gallery.three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Four-column gallery */
+.photo-gallery.four-columns {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* List gallery */
+.photo-gallery.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Photo cards */
+.photo-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card-info {
+    padding: 15px;
+}
+
+.photo-card-info h3 {
+    color: #7567A8;
+}
+
+.photo-card-info a {
+    color: #7567A8;
+    text-decoration: none;
+}
+
+/* List card layout */
+.photo-gallery.list .photo-card {
+    display: flex;
+    align-items: center;
+}
+
+.photo-gallery.list .photo-card img {
+    width: 240px;
+    height: 170px;
+    flex-shrink: 0;
+}
+
+/* Slider */
+.photo-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.slider-window {
+    width: 75%;
+    max-width: 850px;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.slider-item {
+    flex: 0 0 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.slider-item .photo-card img {
+    height: 450px;
+}
+
+.slider-arrow {
+    border: none;
+    background-color: #7567A8;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.slider-arrow:hover {
+    background-color: #5F528E;
+}
+
+.photo-card {
+    position: relative;
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: white;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.photo-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(63, 58, 74, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 15px;
+}
+
+.photo-card-overlay h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.photo-card-overlay span {
+    background: #7567A8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+.photo-card:hover .photo-card-overlay {
+    opacity: 1;
+}
+
+.photo-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .photo-gallery.four-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .photo-gallery.three-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .home-container {
+        padding: 20px 15px;
+    }
+
+    .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .photo-gallery.three-columns,
+    .photo-gallery.four-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-gallery.list .photo-card {
+        flex-direction: column;
+    }
+
+    .photo-gallery.list .photo-card img {
+        width: 100%;
+        height: 230px;
+    }
+
+    .slider-window {
+        width: 85%;
+    }
+
+    .slider-item .photo-card img {
+        height: 260px;
+    }
+
+    .slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
